@@ -144,7 +144,7 @@ def onehot_encode_categorical(X_df,categorical):
 
     encoded_df = pd.get_dummies(X_df[categorical],drop_first = False)
 
-    X_numeric = X_df.drop(columns = categorical)\
+    X_numeric = X_df.drop(columns = categorical)
 
     X_final = pd.concat([X_numeric , encoded_df] , axis = 1)
 
