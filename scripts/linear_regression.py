@@ -57,6 +57,60 @@ class LinearRegressionMaster():
             loss = self.compute_cost(X,y)
             self.loss_history.append(loss)
 
+    def fit_ridge(self, X, y, lambda_):
+        n_features = X.shape[1]
+
+        # identity matrix
+        I = np.eye(n_features)
+
+        # dont regularize bias term
+        I[0, 0] = 0
+
+        # Ridge closed-form solution
+        xtx = X.T @ X
+        ridge_term = lambda_ * I
+
+        self.theta = np.linalg.pinv(xtx + ridge_term) @ (X.T @ y)
+
+    def fit_lasso(self, X, y, lambda_, epochs=1000):
+       
+        m, n = X.shape
+
+    # initialize theta if needed
+        if self.theta is None:
+            self.theta = np.zeros(n)
+
+        self.loss_history = []
+
+        for _ in range(epochs):
+            for j in range(n):
+
+                # skip bias term (do NOT regularize)
+                if j == 0:
+                    r = y - (X @ self.theta) + self.theta[j] * X[:, j]
+                    self.theta[j] = np.sum(X[:, j] * r) / np.sum(X[:, j] ** 2)
+                    continue
+
+                # partial residual
+                r = y - (X @ self.theta) + self.theta[j] * X[:, j]
+
+                rho = np.sum(X[:, j] * r)
+
+                # soft-thresholding
+                if rho < -lambda_ / 2:
+                    self.theta[j] = (rho + lambda_ / 2) / np.sum(X[:, j] ** 2)
+                elif rho > lambda_ / 2:
+                    self.theta[j] = (rho - lambda_ / 2) / np.sum(X[:, j] ** 2)
+                else:
+                    self.theta[j] = 0.0
+
+            # track loss
+            loss = self.compute_cost(X, y)
+            self.loss_history.append(loss)
+
+    
+
+
             
         
      

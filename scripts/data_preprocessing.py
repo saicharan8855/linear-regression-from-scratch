@@ -48,7 +48,7 @@ def num_or_cat(train_df):
     categorical = []
     
     for i in train_df.columns:
-        if pd.api.types.is_numeric_dtype(train_df[col]):
+        if pd.api.types.is_numeric_dtype(train_df[i]):
             numerical.append(i)
         else:
             categorical.append(i)
@@ -108,9 +108,9 @@ def compute_numeric_correlations(X_df,y):
     y = log_transformed saleprice target variable
     """
     for col in X_df.columns:
-        if pd.api.types_is_numeric_dtype(X_df[col]):
+        if pd.api.types.is_numeric_dtype(X_df[col]):
             corr_value = X_df[col].corr(y)
-            correlations[cols] = corr_value 
+            correlations[col] = corr_value 
 
     # orient = "index" means key -> row index and value -> column in correlations dictionary
     corr_df = (
