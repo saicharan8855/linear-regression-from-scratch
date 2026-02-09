@@ -81,6 +81,22 @@ def bias_term(X_train_scaled,X_test_scaled):
      
 
     return h_stack_train,h_stack_test
+
+
+# function for r^2 score
+def r2_score(y_true , y_pred):
+
+    ss_res = np.sum((y_true - y_pred)**2)  # SSR
+    ss_tot = np.sum((y_true - np.mean(y_true))**2)  # SST
+    return 1 - (ss_res/ss_tot)
+
+
+# function for rmse
+def rmse(y_true , y_pred):
+    return np.sqrt(np.mean((y_true - y_pred) ** 2))  # calculates average prediction error in target units
+
+    
+    
     
 
 

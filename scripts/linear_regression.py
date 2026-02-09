@@ -76,7 +76,7 @@ class LinearRegressionMaster():
        
         m, n = X.shape
 
-    # initialize theta if needed
+        # initialize theta if needed
         if self.theta is None:
             self.theta = np.zeros(n)
 
