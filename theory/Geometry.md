@@ -5,10 +5,10 @@ This section presents a geometric interpretation of linear regression, showing t
 
 The column space of the design matrix $X$, denoted as $\text{Col}(X)$, is the subspace of $\mathbb{R}^m$ spanned by the columns of $X$. Any vector in $\text{Col}(X)$ can be written as a linear combination of the columns of $X$.
 
-For any parameter vector $\theta$, the predicted response  
+For any parameter vector $\theta$, the predicted response
 $$
 \hat{y} = X\theta
-$$  
+$$
 lies in the column space of $X$. Therefore, linear regression restricts predictions to vectors that belong to $\text{Col}(X)$.
 
 ## Projection of the Target Vector
@@ -19,34 +19,34 @@ This closest vector is obtained by orthogonally projecting $y$ onto the column s
 
 ## Orthogonality of the Residual
 
-Let the residual vector be defined as  
+Let the residual vector be defined as
 $$
 r = y - \hat{y} = y - X\theta.
-$$  
-A fundamental property of orthogonal projection is that the residual vector is orthogonal to the subspace onto which the projection is made. Therefore, the residual $r$ is orthogonal to the column space of $X$:  
+$$
+A fundamental property of orthogonal projection is that the residual vector is orthogonal to the subspace onto which the projection is made. Therefore, the residual $r$ is orthogonal to the column space of $X$:
 $$
 X^\top r = 0.
 $$
 
 ## Derivation of the Normal Equation
 
-From the orthogonality condition  
+From the orthogonality condition
 $$
 X^\top r = 0,
-$$  
-and using the definition of the residual $r = y - X\theta$, we obtain  
+$$
+and using the definition of the residual $r = y - X\theta$, we obtain
 $$
 X^\top (y - X\theta) = 0.
-$$  
-Expanding the expression gives  
+$$
+Expanding the expression gives
 $$
 X^\top y - X^\top X\theta = 0.
-$$  
-Rearranging terms yields  
+$$
+Rearranging terms yields
 $$
 X^\top X\theta = X^\top y.
-$$  
-If $X^\top X$ is invertible, the solution for $\theta$ is  
+$$
+If $X^\top X$ is invertible, the solution for $\theta$ is
 $$
 \theta = (X^\top X)^{-1} X^\top y.
 $$
