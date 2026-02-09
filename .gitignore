@@ -1,5 +1,27 @@
+
+# Jupyter checkpoints
 .ipynb_checkpoints/
+
+# Python cache  
 __pycache__/
-/git
+*.pyc
 
+# Test/utility scripts (temporary)
+fix.py
+test_lender.py
+TEST.ipynb
+test_*.ipynb
 
+"" 
+"# Jupyter checkpoints" 
+".ipynb_checkpoints/" 
+"" 
+"# Python cache" 
+"__pycache__/" 
+"*.pyc" 
+"" 
+"# Test files" 
+"fix.py" 
+"test_lender.py" 
+"TEST.ipynb" 
+"test_*.ipynb" 
