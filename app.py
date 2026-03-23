@@ -378,7 +378,7 @@ if page == "🏠 House Price Predictor":
         x_bias   = np.hstack([[1.0], x_scaled])
 
         # Predict
-        log_pred = float(model.predict(x_bias.reshape(1, -1)))
+        log_pred = float(model.predict(x_bias.reshape(1, -1))[0])
         price    = np.exp(log_pred)
 
         # 95% CI via standard error propagation
