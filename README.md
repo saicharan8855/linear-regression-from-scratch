@@ -14,6 +14,11 @@ This README provides a comprehensive guide for users interested in understanding
 
 ---
 
+## 🚀 Live Demo
+👉 [Click here to open the app](https://linear-regression-from-scratch-ieftktpvkyxw4appdhkngr.streamlit.app/)
+
+---
+
 ## 🎯 Why This Project Exists
 
 Most implementations treat Linear Regression as a black box:
@@ -30,8 +35,7 @@ Most implementations treat Linear Regression as a black box:
 
 This engine is built to be **analytically tractable** and **statistically transparent**. It bypasses high-level libraries like `scikit-learn` and `statsmodels` to expose the underlying matrix calculus.
 
-## 🚀 Live Demo
-👉 [Click here to open the app](https://linear-regression-from-scratch-ieftktpvkyxw4appdhkngr.streamlit.app/)
+
 
 
 ---
