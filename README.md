@@ -1,6 +1,3 @@
-
-This README provides a comprehensive guide for users interested in understanding and utilizing linear regression from scratch.
-=======
 # Linear Regression from First Principles
 ### *A Complete Mathematical & Empirical Reconstruction of the OLS Framework*
 
@@ -9,7 +6,7 @@ This README provides a comprehensive guide for users interested in understanding
 </p>
 
 <p align="center">
-  <i>This is not another high-level implementation. This repository contains a ground-up reconstruction of Linear Regression, moving from the probabilistic origins of Maximum Likelihood Estimation (MLE) to vectorized optimization and geometric projection.</i>
+  <i>This is not another high-level implementation. This repository contains a ground-up reconstruction of Linear Regression, moving from the probabilistic origins of Maximum Likelihood Estimation to the geometry of orthogonal projection, and finally to a fully working NumPy-based engine with diagnostics, inference, and regularization.</i>
 </p>
 
 ---
@@ -34,9 +31,6 @@ Most implementations treat Linear Regression as a black box:
 - ✅ **How do we fix failures?** (Ridge/Lasso regularization, proper validation)
 
 This engine is built to be **analytically tractable** and **statistically transparent**. It bypasses high-level libraries like `scikit-learn` and `statsmodels` to expose the underlying matrix calculus.
-
-
-
 
 ---
 
@@ -103,7 +97,7 @@ Maximizing P(y|X,θ)  ⟺  Minimizing Σ(y - Xθ)²
   <img src="docs/geometry/least_squares_as_projection.png" width="800" alt="Geometric Interpretation"/>
 </p>
 
-Linear Regression is fundamentally a **projection problem**. We find the vector $\hat{y}$ in the Column Space of $X$ that is closest to the observed $y$. This occurs when the residual vector $e = y - \hat{y}$ is **orthogonal** to every column of $X$.
+Linear Regression is fundamentally a **projection problem**. We find the vector $\hat{y}$ in the Column Space of $X$ that is closest to the observed $y$. This occurs when the residual vector $e = y - \hat{y}$ is orthogonal to the column space:
 
 $$X^T(y - X\theta) = 0 \quad \implies \quad \theta = (X^T X)^{-1} X^T y$$
 
@@ -419,7 +413,7 @@ jupyter notebook notebooks/phase_8_final_prediction.ipynb
 - **Scaling is mandatory:** Gradient descent fails catastrophically without it
 
 ### Why This Matters
-Understanding *why* algorithms work makes you a **10x better debugger**. When a model fails, you know where to look. When assumptions break, you know how to fix them. This is the difference between "can use sklearn" and "understands machine learning."
+Understanding *why* algorithms work makes you a **10x better debugger**. When a model fails, you know where to look. When assumptions break, you know how to fix them.
 
 ---
 
@@ -491,4 +485,3 @@ If you found this repository useful for understanding Linear Regression deeply:
 <p align="center">
   <sub>© 2025 Sai Charan. This project is MIT licensed.</sub>
 </p>
->>>>>>> 7671b0d (Update README.md)
