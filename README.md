@@ -465,7 +465,7 @@ If you found this repository useful for understanding Linear Regression deeply:
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/saicharan8855/linear-regression-from-scratch?style=social" alt="GitHub stars"/>
-  <img src="https://img.shields.io/github/forks/saicharan8855/linear-regression-from-scratch?style=social" alt="GitHub forks"/>
+  <img src="https://img.shields.io/github/forks/saicharan8855/linear-regression-from-scratch?style=social&cacheSeconds=3600" alt="GitHub forks"/>
 </p>
 
 <p align="center">
